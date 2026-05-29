@@ -218,12 +218,12 @@ function App() {
 
         <div className="github-stats">
           <img
-            src="https://github-readme-stats.vercel.app/api?username=Kshitijdeshmukh3&show_icons=true&theme=tokyonight"
+            src="https://github-readme-stats.vercel.app/api?username=Kshitijdeshmukh3&show_icons=true&theme=tokyonight&hide_border=true"
             alt="GitHub Stats"
           />
 
           <img
-            src="https://github-readme-streak-stats.herokuapp.com/?user=Kshitijdeshmukh3&theme=tokyonight"
+            src="https://streak-stats.demolab.com?user=Kshitijdeshmukh3&theme=tokyonight&hide_border=true"
             alt="GitHub Streak"
           />
         </div>
@@ -254,7 +254,11 @@ function App() {
       <section id="resume" className="section">
         <h2>Resume Preview</h2>
 
-        <iframe src="/resume.pdf" title="Resume" className="resume-frame"></iframe>
+        <iframe
+          src="/resume.pdf"
+          title="Resume"
+          className="resume-frame"
+        ></iframe>
 
         <a href="/resume.pdf" download className="btn resume-btn">
           <FaDownload /> Download Resume
