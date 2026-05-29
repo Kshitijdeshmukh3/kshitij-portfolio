@@ -1,9 +1,34 @@
 import "./App.css";
 import profile from "./assets/profile.jpg";
+import emailjs from "@emailjs/browser";
+import { useRef } from "react";
 import { TypeAnimation } from "react-type-animation";
 import { FaGithub, FaLinkedin, FaDownload } from "react-icons/fa";
 
 function App() {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "YOUR_SERVICE_ID",
+        "YOUR_TEMPLATE_ID",
+        form.current,
+        "YOUR_PUBLIC_KEY"
+      )
+      .then(
+        () => {
+          alert("Message sent successfully!");
+          form.current.reset();
+        },
+        () => {
+          alert("Something went wrong. Please try again.");
+        }
+      );
+  };
+
   return (
     <>
       <nav className="navbar">
@@ -12,9 +37,10 @@ function App() {
         <ul>
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
-          <li><a href="#services">What I Do</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#projects">Projects</a></li>
+          <li><a href="#github">GitHub</a></li>
+          <li><a href="#resume">Resume</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -93,79 +119,30 @@ function App() {
         </p>
 
         <p>
-          My goal is to build a career in a professional organization where I
-          can apply my theoretical, logical and technical skills in real-world
+          I want to work in a challenging and creative environment where I can
+          apply my technical, logical and programming skills in real-world
           projects.
         </p>
-      </section>
-
-      <section id="services" className="section">
-        <h2>What I Do</h2>
-
-        <div className="projects">
-          <div className="card">
-            <h3>Frontend Development</h3>
-            <p>
-              I create responsive and modern websites using HTML, CSS,
-              JavaScript and React JS.
-            </p>
-          </div>
-
-          <div className="card">
-            <h3>Java Development</h3>
-            <p>
-              I build logic-based applications using Java, OOP concepts, JSP
-              and Servlets.
-            </p>
-          </div>
-
-          <div className="card">
-            <h3>Database Management</h3>
-            <p>
-              I work with SQL and MySQL for storing, managing and retrieving
-              data.
-            </p>
-          </div>
-        </div>
       </section>
 
       <section id="skills" className="section">
         <h2>Skills</h2>
 
-        <div className="skill-bar">
-          <p>HTML / CSS</p>
-          <div className="progress">
-            <span style={{ width: "90%" }}></span>
+        {[
+          ["HTML / CSS", "90%"],
+          ["JavaScript", "85%"],
+          ["React JS", "80%"],
+          ["Java", "80%"],
+          ["SQL / MySQL", "75%"],
+          ["Python", "70%"],
+        ].map((skill) => (
+          <div className="skill-bar" key={skill[0]}>
+            <p>{skill[0]}</p>
+            <div className="progress">
+              <span style={{ width: skill[1] }}></span>
+            </div>
           </div>
-        </div>
-
-        <div className="skill-bar">
-          <p>JavaScript</p>
-          <div className="progress">
-            <span style={{ width: "85%" }}></span>
-          </div>
-        </div>
-
-        <div className="skill-bar">
-          <p>React JS</p>
-          <div className="progress">
-            <span style={{ width: "80%" }}></span>
-          </div>
-        </div>
-
-        <div className="skill-bar">
-          <p>Java</p>
-          <div className="progress">
-            <span style={{ width: "80%" }}></span>
-          </div>
-        </div>
-
-        <div className="skill-bar">
-          <p>SQL / MySQL</p>
-          <div className="progress">
-            <span style={{ width: "75%" }}></span>
-          </div>
-        </div>
+        ))}
       </section>
 
       <section id="projects" className="section">
@@ -236,50 +213,52 @@ function App() {
         </div>
       </section>
 
-      <section className="section">
-        <h2>Education & Training</h2>
+      <section id="github" className="section">
+        <h2>GitHub Stats</h2>
 
-        <div className="timeline-item">
-          <h3>B.E. Computer Engineering</h3>
-          <p>A. C. Patil College of Engineering - Third Year</p>
-        </div>
+        <div className="github-stats">
+          <img
+            src="https://github-readme-stats.vercel.app/api?username=Kshitijdeshmukh3&show_icons=true&theme=tokyonight"
+            alt="GitHub Stats"
+          />
 
-        <div className="timeline-item">
-          <h3>Software Development Training</h3>
-          <p>Rkdemy Techskill, Thane</p>
-        </div>
-
-        <div className="timeline-item">
-          <h3>HSC - Computer Science</h3>
-          <p>Lakshya Prep Jr. College</p>
-        </div>
-
-        <div className="timeline-item">
-          <h3>SSC</h3>
-          <p>St. Xavier High School</p>
+          <img
+            src="https://github-readme-streak-stats.herokuapp.com/?user=Kshitijdeshmukh3&theme=tokyonight"
+            alt="GitHub Streak"
+          />
         </div>
       </section>
 
       <section className="section">
-        <h2>Resume Highlights</h2>
+        <h2>Achievements</h2>
 
         <div className="timeline-item">
-          <h3>Programming Languages</h3>
-          <p>Java, C, JavaScript, Python, SQL</p>
+          <h3>Software Development Training</h3>
+          <p>Completed training at Rkdemy Techskill, Thane.</p>
         </div>
 
         <div className="timeline-item">
-          <h3>Web Technologies</h3>
-          <p>HTML, CSS, Bootstrap, React JS, JSP, Servlets</p>
+          <h3>Projects</h3>
+          <p>Built Book Store, Tourism and Food Website projects.</p>
         </div>
 
         <div className="timeline-item">
-          <h3>Career Objective</h3>
+          <h3>Learning</h3>
           <p>
-            To work in a challenging and creative environment where I can
-            implement my technical skills and grow professionally.
+            Currently improving React JS, Java and Full Stack Development
+            skills.
           </p>
         </div>
+      </section>
+
+      <section id="resume" className="section">
+        <h2>Resume Preview</h2>
+
+        <iframe src="/resume.pdf" title="Resume" className="resume-frame"></iframe>
+
+        <a href="/resume.pdf" download className="btn resume-btn">
+          <FaDownload /> Download Resume
+        </a>
       </section>
 
       <section id="contact" className="section">
@@ -288,19 +267,44 @@ function App() {
         <p>Email: deshmukhkshitijpandurang@gmail.com</p>
         <p>Mobile: +91 7039886061</p>
 
-        <form>
-          <input type="text" placeholder="Name" />
+        <form ref={form} onSubmit={sendEmail}>
+          <input type="text" name="user_name" placeholder="Your Name" required />
 
-          <input type="email" placeholder="Email" />
+          <input
+            type="email"
+            name="user_email"
+            placeholder="Your Email"
+            required
+          />
 
-          <textarea placeholder="Message"></textarea>
+          <textarea name="message" placeholder="Your Message" required></textarea>
 
-          <button>Send Message</button>
+          <button type="submit">Send Message</button>
         </form>
       </section>
 
       <footer>
-        © 2026 Kshitij Pandurang Deshmukh | Professional Portfolio
+        <div className="footer-links">
+          <a
+            href="https://github.com/Kshitijdeshmukh3"
+            target="_blank"
+            rel="noreferrer"
+          >
+            GitHub
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/kshitij-deshmukh-7891b2273"
+            target="_blank"
+            rel="noreferrer"
+          >
+            LinkedIn
+          </a>
+
+          <a href="mailto:deshmukhkshitijpandurang@gmail.com">Email</a>
+        </div>
+
+        <p>© 2026 Kshitij Pandurang Deshmukh | Professional Portfolio</p>
       </footer>
     </>
   );
