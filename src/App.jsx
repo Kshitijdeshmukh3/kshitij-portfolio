@@ -280,8 +280,9 @@ function App() {
         </div>
       </section>
 
-      <section id="resume" className="section">
-        <h2>Resume Preview</h2>
+      <a href="/resume.pdf" download className="btn">
+      <FaDownload /> Resume
+      </a>
 
         <iframe
           src="/resume.pdf"
@@ -290,7 +291,7 @@ function App() {
         ></iframe>
 
         <a href="/resume.pdf" download className="btn resume-btn">
-          <FaDownload /> Download Resume
+        <FaDownload /> Download Resume
         </a>
       </section>
 
