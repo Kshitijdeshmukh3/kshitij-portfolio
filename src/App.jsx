@@ -32,7 +32,7 @@ function App() {
   return (
     <>
       <nav className="navbar">
-        <div className="logo">Kshitij.</div>
+        <div className="logo">Kshitij Deshmukh</div>
 
         <ul>
           <li><a href="#home">Home</a></li>
@@ -214,21 +214,50 @@ function App() {
       </section>
 
       <section id="github" className="section">
-        <h2>GitHub Stats</h2>
 
-        <div className="github-stats">
-          <img
-            src="https://github-readme-stats.vercel.app/api?username=Kshitijdeshmukh3&show_icons=true&theme=tokyonight&hide_border=true"
-            alt="GitHub Stats"
-          />
+  <h2>GitHub Profile & Statistics</h2>
 
-          <img
-            src="https://streak-stats.demolab.com?user=Kshitijdeshmukh3&theme=tokyonight&hide_border=true"
-            alt="GitHub Streak"
-          />
-        </div>
-      </section>
+  <p className="github-description">
+    Explore my coding activity, programming languages, repositories and
+    contribution streaks on GitHub.
+  </p>
 
+  <div className="github-stats">
+
+    <img
+      src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Kshitijdeshmukh3&theme=github_dark"
+      alt="GitHub Profile Summary"
+    />
+
+    <img
+      src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Kshitijdeshmukh3&theme=github_dark"
+      alt="Repositories Per Language"
+    />
+
+    <img
+      src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Kshitijdeshmukh3&theme=github_dark"
+      alt="Most Commit Language"
+    />
+
+    <img
+      src="https://streak-stats.demolab.com?user=Kshitijdeshmukh3&theme=tokyonight&hide_border=true"
+      alt="GitHub Streak"
+    />
+
+  </div>
+
+  <div className="github-button">
+    <a
+      href="https://github.com/Kshitijdeshmukh3"
+      target="_blank"
+      rel="noreferrer"
+      className="btn"
+    >
+      Visit My GitHub
+    </a>
+  </div>
+
+</section>
       <section className="section">
         <h2>Achievements</h2>
 
