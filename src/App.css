@@ -25,7 +25,7 @@ body {
   align-items: center;
   background: rgba(15, 23, 42, 0.75);
   backdrop-filter: blur(15px);
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   z-index: 1000;
 }
 
@@ -100,15 +100,15 @@ body {
   padding: 8px 18px;
   margin-bottom: 20px;
   border-radius: 25px;
-  background: rgba(56,189,248,0.15);
+  background: rgba(56, 189, 248, 0.15);
   color: #38bdf8;
-  border: 1px solid rgba(56,189,248,0.4);
+  border: 1px solid rgba(56, 189, 248, 0.4);
 }
 
 .hero h1 {
   font-size: 58px;
   margin-bottom: 15px;
-  background: linear-gradient(90deg,#38bdf8,#ffffff);
+  background: linear-gradient(90deg, #38bdf8, #ffffff);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -155,7 +155,7 @@ body {
 
 .btn:hover {
   transform: translateY(-5px);
-  box-shadow: 0 0 25px rgba(56,189,248,0.6);
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.6);
 }
 
 .social-icons {
@@ -228,20 +228,20 @@ body {
 .progress span {
   display: block;
   height: 100%;
-  background: linear-gradient(90deg,#38bdf8,#06b6d4);
+  background: linear-gradient(90deg, #38bdf8, #06b6d4);
   animation: loadSkill 2s ease;
 }
 
 .projects {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 25px;
 }
 
 .card,
 .timeline-item {
-  background: rgba(15,23,42,0.9);
-  border: 1px solid rgba(56,189,248,0.25);
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(56, 189, 248, 0.25);
   padding: 25px;
   border-radius: 18px;
   transition: 0.4s;
@@ -250,7 +250,7 @@ body {
 .card:hover,
 .timeline-item:hover {
   transform: translateY(-12px) scale(1.03);
-  box-shadow: 0 0 35px rgba(56,189,248,0.35);
+  box-shadow: 0 0 35px rgba(56, 189, 248, 0.35);
 }
 
 .card h3,
@@ -323,17 +323,47 @@ body {
   margin-bottom: 20px;
 }
 
+/* Resume Section */
+
+.resume-text {
+  color: #cbd5e1;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.resume-buttons {
+  margin-top: 20px;
+  margin-bottom: 25px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
 .resume-frame {
   width: 100%;
-  height: 650px;
-  border: 1px solid rgba(56, 189, 248, 0.35);
-  border-radius: 18px;
+  height: 700px;
+  border: none;
+  border-radius: 20px;
   background: white;
+  overflow: hidden;
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.2);
   margin-bottom: 25px;
 }
 
 .resume-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   width: fit-content;
+}
+
+.resume-btn:hover {
+  transform: translateY(-5px);
 }
 
 form {
@@ -348,7 +378,7 @@ input,
 textarea {
   padding: 15px;
   border-radius: 12px;
-  border: 1px solid rgba(56,189,248,0.3);
+  border: 1px solid rgba(56, 189, 248, 0.3);
   background: #0f172a;
   color: white;
   outline: none;
@@ -357,7 +387,7 @@ textarea {
 input:focus,
 textarea:focus {
   border-color: #38bdf8;
-  box-shadow: 0 0 15px rgba(56,189,248,0.3);
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
 }
 
 textarea {
@@ -384,7 +414,7 @@ footer {
   text-align: center;
   padding: 24px;
   background: #020617;
-  border-top: 1px solid rgba(56,189,248,0.2);
+  border-top: 1px solid rgba(56, 189, 248, 0.2);
 }
 
 .footer-links {
@@ -404,9 +434,11 @@ footer {
   color: white;
 }
 
+/* Animations */
+
 @keyframes move {
   100% {
-    transform: translate(120px,120px);
+    transform: translate(120px, 120px);
   }
 }
 
@@ -424,16 +456,17 @@ footer {
 
 @keyframes glow {
   from {
-    filter: drop-shadow(0 0 5px rgba(56,189,248,0.3));
+    filter: drop-shadow(0 0 5px rgba(56, 189, 248, 0.3));
   }
 
   to {
-    filter: drop-shadow(0 0 18px rgba(56,189,248,0.8));
+    filter: drop-shadow(0 0 18px rgba(56, 189, 248, 0.8));
   }
 }
 
 @keyframes float {
-  0%,100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
 
@@ -448,7 +481,9 @@ footer {
   }
 }
 
-@media(max-width:900px) {
+/* Mobile Responsive */
+
+@media (max-width: 900px) {
   .navbar {
     flex-direction: column;
     gap: 15px;
@@ -484,6 +519,11 @@ footer {
 
   .resume-frame {
     height: 450px;
+  }
+
+  .resume-buttons {
+    flex-direction: column;
+    align-items: center;
   }
 
   .github-stats {

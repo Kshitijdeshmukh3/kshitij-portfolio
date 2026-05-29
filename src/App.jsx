@@ -35,13 +35,25 @@ function App() {
         <div className="logo">Kshitij Deshmukh</div>
 
         <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#github">GitHub</a></li>
-          <li><a href="#resume">Resume</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li>
+            <a href="#home">Home</a>
+          </li>
+
+          <li>
+            <a href="#about">About</a>
+          </li>
+
+          <li>
+            <a href="#skills">Skills</a>
+          </li>
+
+          <li>
+            <a href="#projects">Projects</a>
+          </li>
+
+          <li>
+            <a href="#contact">Contact</a>
+          </li>
         </ul>
       </nav>
 
@@ -138,6 +150,7 @@ function App() {
         ].map((skill) => (
           <div className="skill-bar" key={skill[0]}>
             <p>{skill[0]}</p>
+
             <div className="progress">
               <span style={{ width: skill[1] }}></span>
             </div>
@@ -151,10 +164,12 @@ function App() {
         <div className="projects">
           <div className="card">
             <h3>Book Store Website</h3>
+
             <p>
               Online book store website made using HTML, CSS, Bootstrap, Java
               and MySQL.
             </p>
+
             <a
               href="https://github.com/Kshitijdeshmukh3/book-shop-store"
               target="_blank"
@@ -166,10 +181,12 @@ function App() {
 
           <div className="card">
             <h3>Tourism Website</h3>
+
             <p>
               Responsive tourism website created using HTML, CSS, Bootstrap and
               Java.
             </p>
+
             <a
               href="https://tourismkshitij.ccbp.tech"
               target="_blank"
@@ -181,10 +198,12 @@ function App() {
 
           <div className="card">
             <h3>Food Website</h3>
+
             <p>
               Modern responsive food website with clean UI and attractive
               layout.
             </p>
+
             <a
               href="https://kshitijfood.ccbp.tech"
               target="_blank"
@@ -213,66 +232,24 @@ function App() {
         </div>
       </section>
 
-      <section id="github" className="section">
-
-  <h2>GitHub Profile & Statistics</h2>
-
-  <p className="github-description">
-    Explore my coding activity, programming languages, repositories and
-    contribution streaks on GitHub.
-  </p>
-
-  <div className="github-stats">
-
-    <img
-      src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Kshitijdeshmukh3&theme=github_dark"
-      alt="GitHub Profile Summary"
-    />
-
-    <img
-      src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Kshitijdeshmukh3&theme=github_dark"
-      alt="Repositories Per Language"
-    />
-
-    <img
-      src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Kshitijdeshmukh3&theme=github_dark"
-      alt="Most Commit Language"
-    />
-
-    <img
-      src="https://streak-stats.demolab.com?user=Kshitijdeshmukh3&theme=tokyonight&hide_border=true"
-      alt="GitHub Streak"
-    />
-
-  </div>
-
-  <div className="github-button">
-    <a
-      href="https://github.com/Kshitijdeshmukh3"
-      target="_blank"
-      rel="noreferrer"
-      className="btn"
-    >
-      Visit My GitHub
-    </a>
-  </div>
-
-</section>
       <section className="section">
         <h2>Achievements</h2>
 
         <div className="timeline-item">
           <h3>Software Development Training</h3>
+
           <p>Completed training at Rkdemy Techskill, Thane.</p>
         </div>
 
         <div className="timeline-item">
           <h3>Projects</h3>
+
           <p>Built Book Store, Tourism and Food Website projects.</p>
         </div>
 
         <div className="timeline-item">
           <h3>Learning</h3>
+
           <p>
             Currently improving React JS, Java and Full Stack Development
             skills.
@@ -280,25 +257,11 @@ function App() {
         </div>
       </section>
 
-      <a href="/resume.pdf" download className="btn">
-      <FaDownload /> Resume
-      </a>
-
-        <iframe
-          src="/resume.pdf"
-          title="Resume"
-          className="resume-frame"
-        ></iframe>
-
-        <a href="/resume.pdf" download className="btn resume-btn">
-        <FaDownload /> Download Resume
-        </a>
-      </section>
-
       <section id="contact" className="section">
         <h2>Contact Me</h2>
 
         <p>Email: deshmukhkshitijpandurang@gmail.com</p>
+
         <p>Mobile: +91 7039886061</p>
 
         <form ref={form} onSubmit={sendEmail}>
